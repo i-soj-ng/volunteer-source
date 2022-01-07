@@ -36,14 +36,31 @@
             width: 120px;
         }
     </style>
+    <script>
+        function buttonClicked() {
+            const id_input = document.querySelector('#id_input_box').value;
+            const pw_input = document.querySelector('#pw_input_box').value;
+
+            if (id_input && pw_input) {
+                alert("로그인 되었습니다.");
+                location.href='page.html'
+            }
+            else if (id_input && !pw_input) {
+                alert("비밀번호를 입력하세요.");
+            }
+            else {
+                alert("아이디를 입력하세요.");
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="login_box">
         <h1 id="login_header">로그인</h1>
         <input id="id_input_box" type="text" placeholder="ID를 입력하세요">
         <input id="pw_input_box" type="password" placeholder="PW를 입력하세요"><br>
-        <button id="login_button" onClick="location.href='page.html'">로그인</button><br>
-        <button id="signup_button" onClick="location.href='signup.html'">회원가입</button>
+        <button id="login_button" onclick="buttonClicked()">로그인</button><br>
+        <button id="signup_button" onclick="location.href='signup.html'">회원가입</button>
     </div>
 </body>
 </html>

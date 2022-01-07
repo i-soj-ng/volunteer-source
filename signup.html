@@ -30,6 +30,22 @@
             width: 120px;
         }
     </style>
+    <script>
+        function buttonClicked() {
+            const id_input = document.querySelector('#id_input_box').value;
+            const pw_input = document.querySelector('#pw_input_box').value;
+            const name_input_box = document.querySelector('#name_input_box').value;
+            const email_input_box = document.querySelector('#email_input_box').value;
+
+            if ((id_input && pw_input) && (name_input_box && email_input_box)) {
+                alert("회원가입 되었습니다.");
+                location.href='login.html'
+            }
+            else {
+                alert("정보를 모두 입력해주세요.");
+            }
+        }
+    </script>
 </head>
 <body>
 <div class="login_box">
@@ -38,7 +54,7 @@
     <input id="pw_input_box" type="password" placeholder="사용할 PW를 입력하세요">
     <input id="name_input_box" type="text" placeholder="이름을 입력하세요">
     <input id="email_input_box" type="text" placeholder="이메일을 입력하세요">
-    <button id="signup_button" onClick="location.href='login.html'">회원가입</button>
+    <button id="signup_button" onclick="buttonClicked()">회원가입</button>
 </div>
 </body>
 </html>
